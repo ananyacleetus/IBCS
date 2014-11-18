@@ -6,7 +6,7 @@
  * @author Ananya
  * @version 11-17-14
  */
-public class Book
+class Book
 {
     // The fields.
     private String author;
