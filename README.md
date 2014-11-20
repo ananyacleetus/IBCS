@@ -1,4 +1,4 @@
 IBCS
 ====
 
-Just my assignments for IB CS
+Just my assignments for IB Computer Science
