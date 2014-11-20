@@ -15,8 +15,7 @@ class Book
     private String refNumber;
 
     /**
-     * Set the author and title fields when this object
-     * is constructed.
+     * Constructor for objects of class Book
      */
     public Book(String bookAuthor, String bookTitle, int bookPages)
     {
@@ -26,22 +25,60 @@ class Book
         refNumber = "";
     }
 
+    /**
+     * 
+     * Accessor method for book author
+     *
+     * @param  none
+     * @return the book's author 
+     */
     public String getAuthor(){
         return author;
     }
 
+   /**
+     * 
+     * Accessor method for book title
+     *
+     * @param  none
+     * @return the book's title 
+     */
     public String getTitle(){
         return title;
     }
 
+    /**
+     * 
+     * Accessor method for book pages
+     *
+     * @param  none
+     * @return the book's number of pages 
+     */
      public int getPages(){
         return pages;
     }
+
+
+    /**
+     * 
+     * Accessor method for book reference number
+     *
+     * @param  none
+     * @return the book's reference number 
+     */
 
     public String getRefNumber(){
         return refNumber;
     }
 
+    /**
+     * 
+     * Mutator method to set book reference number to input value
+     *
+     * @param  ref: the reference number to be set for the book
+     * @return none
+     * @precondition must be 3 characters or longer
+     */
     public void setRefNumber(String ref){
         if (ref.length() <3){
 
@@ -53,6 +90,13 @@ class Book
         }
     }
 
+    /**
+     * 
+     * Prints book details
+     *
+     * @param  none
+     * @return none 
+     */
     public void printDetails(){
 
         if (refNumber.length() == 0)
