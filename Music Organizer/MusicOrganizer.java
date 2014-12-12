@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.io.File;
 import entagged.audioformats.*;
 import entagged.audioformats.exceptions.*;
 
 /**
  * A class to hold details of audio files.
- *
+ *ß
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
  */
@@ -21,8 +22,8 @@ public class MusicOrganizer {
         File audioDir = new File("Audio");
         String[] filenames = audioDir.list();
 
-        for (int i = 0; i < filenames.size(); i++) {
-            files.add(filenames[i]);
+        for (int i = 0; i < filenames.length; i++) {
+            files.add(new Track(filenames[i]));
         }
     }
 
@@ -84,17 +85,49 @@ public class MusicOrganizer {
         }
     }
 
-    // /**
-    //  * Returns list of tracks with that artist
-    //  * @param artist to be searched for
-    //  */
-    // public ArrayList<Track> getTracksByArtist(String artist){
-    //     artistSearch = new ArrayList<Track>;
-    //      for (int i = 0; i < files.size(); i++) {
-    //         if (file)
-    // }
+    /**
+     * Returns list of tracks with that artist
+     * @param artist to be searched for
+     */
+    public ArrayList<Track> getTracksByArtist(String artist) {
+        ArrayList<Track> artistSearch = new ArrayList<Track>();
+        for (int i = 0; i < files.size(); i++) {
+            if (((files.get(i)).getArtist()).equals(artist)) {
+                artistSearch.add(files.get(i));
+            }
+        }
+        return artistSearch;
+    }
 
+        /**
+     * Returns list of tracks that are favorited
+     * @param none
+     */
+    public ArrayList<Track> getFavorites() {
+        ArrayList<Track> favSearch = new ArrayList<Track>();
+        for (int i = 0; i < files.size(); i++) {
+            if ((files.get(i)).getFavorite()== true) {
+                favSearch.add(files.get(i));
+            }
+        }
+        return favSearch;
+    }
 
+    /**
+     * Returns list of tracks with that genre
+     * @param genre to be searched for
+     */
+    public ArrayList<Track> getTracksByGenre(String genre) {
+        ArrayList<Track> genreSearch = new ArrayList<Track>();
+        for (int i = 0; i < files.size(); i++) {
+            if (((files.get(i)).getGenre()).equals(genre)) {
+                genreSearch.add(files.get(i));
+            }
+        }
+
+        return genreSearch;
+
+    }
     public static void main(String [ ] args) {
 
         MusicOrganizer mus = new MusicOrganizer();

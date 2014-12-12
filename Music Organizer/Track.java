@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+import java.io.File;
+import entagged.audioformats.*;
+import entagged.audioformats.exceptions.*;
+
 /**
  * A class to hold details of audio files.
  *
@@ -11,6 +15,7 @@ public class Track {
     private String artist;
     private String genre;
     private String year;
+    private boolean favorite;
 
 
 
@@ -18,8 +23,9 @@ public class Track {
          * Create a Track
          */
     public Track(String file) {
+	AudioFile audioFile = null;
         try {
-            AudioFile audioFile = AudioFileIO.read(new File(file)); //Reads the given file.
+            audioFile = AudioFileIO.read(new File(file)); //Reads the given file.
         }
 
         catch (CannotReadException e) {
@@ -33,6 +39,7 @@ public class Track {
         artist = mp3Tag.getFirstArtist();
         genre = mp3Tag.getFirstGenre();
         year = mp3Tag.getFirstYear();
+        favorite = false;
     }
 
     /**
@@ -43,6 +50,14 @@ public class Track {
         return filename;
     }
 
+    /**
+         * Sets track as favorite or not
+         * @param boolean for favorite 
+         */
+    public void setFavorite(boolean setting) {
+        favorite = setting;
+        
+            }
 
     /**
          * Return title
@@ -50,6 +65,15 @@ public class Track {
          */
     public String getTitle() {
         return title;
+    }
+
+
+    /**
+         * Return favorite or not
+         * @param none
+         */
+    public boolean getFavorite(){
+        return favorite;
     }
 
     /**
