@@ -1,0 +1,38 @@
+/**
+ * My app
+ *
+ * @author Ananya Cleetus
+ * @version 2014.12.07
+ */
+public class TunesApp {
+   
+	private MusicPlayer	player;
+	private MusicOrganizer organizer;
+
+	public TunesApp(){
+		player = new MusicPlayer();
+		organizer = new MusicOrganizer();
+
+	}
+
+
+	public void mainMenu(){
+
+	}
+
+	public void playMenu(){
+
+	}
+
+
+	public void artistMenu(){
+
+
+	}
+
+
+	public void genreMenu(){
+		
+	}
+
+   }
