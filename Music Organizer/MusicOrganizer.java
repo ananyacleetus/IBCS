@@ -5,7 +5,7 @@ import entagged.audioformats.*;
 import entagged.audioformats.exceptions.*;
 
 /**
- * A class to hold details of audio files.
+ * A class to hold details of audio files. 
  *ß
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
