@@ -23,7 +23,7 @@ public class Track {
          * Create a Track
          */
     public Track(String file) {
-	AudioFile audioFile = null;
+        AudioFile audioFile = null;
         try {
             audioFile = AudioFileIO.read(new File(file)); //Reads the given file.
         }
@@ -52,12 +52,12 @@ public class Track {
 
     /**
          * Sets track as favorite or not
-         * @param boolean for favorite 
+         * @param boolean for favorite
          */
     public void setFavorite(boolean setting) {
         favorite = setting;
-        
-            }
+
+    }
 
     /**
          * Return title
@@ -72,7 +72,7 @@ public class Track {
          * Return favorite or not
          * @param none
          */
-    public boolean getFavorite(){
+    public boolean getFavorite() {
         return favorite;
     }
 

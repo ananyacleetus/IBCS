@@ -14,6 +14,7 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
  * @author David J. Barnes and Michael Kolling
  * @version 2011.07.31
  */
+
 public class MusicPlayer
 {
     // The current player. It might be null.

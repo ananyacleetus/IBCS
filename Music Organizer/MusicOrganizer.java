@@ -5,7 +5,7 @@ import entagged.audioformats.*;
 import entagged.audioformats.exceptions.*;
 
 /**
- * A class to hold details of audio files. 
+ * A class to hold details of audio files.
  *ß
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
@@ -92,21 +92,21 @@ public class MusicOrganizer {
     public ArrayList<Track> getTracksByArtist(String artist) {
         ArrayList<Track> artistSearch = new ArrayList<Track>();
         for (int i = 0; i < files.size(); i++) {
-            if (((files.get(i)).getArtist()).equals(artist)) {
+            if (files.get(i).getArtist() == artist) {
                 artistSearch.add(files.get(i));
             }
         }
         return artistSearch;
     }
 
-        /**
-     * Returns list of tracks that are favorited
-     * @param none
-     */
+    /**
+    * Returns list of tracks that are favorited
+    * @param none
+    */
     public ArrayList<Track> getFavorites() {
         ArrayList<Track> favSearch = new ArrayList<Track>();
         for (int i = 0; i < files.size(); i++) {
-            if ((files.get(i)).getFavorite()== true) {
+            if ((files.get(i)).getFavorite()) {
                 favSearch.add(files.get(i));
             }
         }
@@ -120,7 +120,7 @@ public class MusicOrganizer {
     public ArrayList<Track> getTracksByGenre(String genre) {
         ArrayList<Track> genreSearch = new ArrayList<Track>();
         for (int i = 0; i < files.size(); i++) {
-            if (((files.get(i)).getGenre()).equals(genre)) {
+            if (files.get(i).getGenre() == genre) {
                 genreSearch.add(files.get(i));
             }
         }
@@ -128,14 +128,76 @@ public class MusicOrganizer {
         return genreSearch;
 
     }
-    public static void main(String [ ] args) {
 
-        MusicOrganizer mus = new MusicOrganizer();
-        System.out.println(mus.getNumberofTracks());
-        mus.listTrack(0);
-        mus.listTrack(1);
-        mus.listAllTracks();
+    /**
+     * Returns list of all artists as strings
+     * @param none
+     */
+    public ArrayList<String> returnArtists() {
+        ArrayList<String> artists = new ArrayList<String>();
+        boolean curr = false;
+        int i = 0;
+        for (int x = 0; x < files.size(); x++) {
 
+            while ((curr == false) && i < artists.size()) {
+                if (artists.get(i).equals(files.get(x).getArtist() {
+                curr = true; i++;
 
+            }
+        }
     }
+
+    i = 0;
+    if (curr == false) {
+            artists.add(files.get(x).getArtist());
+
+        } else {
+            curr = false;
+        }
+
+
+        return artists;
+    }
+
+    /**
+     * Returns list of all genres as strings
+     * @param none
+     */
+    public ArrayList<String> returnGenres() {
+        ArrayList<String> genres = new ArrayList<String>();
+        boolean curr = false;
+        int i = 0;
+        for (int x = 0; x < files.size(); x++) {
+
+            while ((curr == false) && i < genres.size()) {
+                if (genres.get(i).equals(files.get(x).getGenre() {
+                curr = true; i++;
+
+            }
+        }
+    }
+
+    i = 0;
+    if (curr == false) {
+            genres.add(files.get(x).getGenre());
+
+        } else {
+            curr = false;
+        }
+
+
+        return genres;
+    }
+
+
+    // public static void main(String [ ] args) {
+
+    //     MusicOrganizer mus = new MusicOrganizer();
+    //     System.out.println(mus.getNumberofTracks());
+    //     mus.listTrack(0);
+    //     mus.listTrack(1);
+    //     mus.listAllTracks();
+
+
+    // }
 }
